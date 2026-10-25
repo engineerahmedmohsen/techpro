@@ -338,6 +338,7 @@ const S=$('#swatches');COLORS.forEach(([n,h])=>{const b=document.createElement('
 /* offline */
 if('serviceWorker' in navigator){try{navigator.serviceWorker.register('sw.js')}catch(e){}}
 /* start */
+window.addEventListener('hashchange',()=>{const t=(location.hash||'').slice(1);if(['home','templates','brief','brand'].includes(t))show(t)});
 const h=(location.hash||'').slice(1);show(['home','templates','brief','brand'].includes(h)?h:store.get('tp.tab','home'));
 })();
 </script>
